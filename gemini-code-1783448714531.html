@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoops & Smiles | Artisanal Ice Cream Shop</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fff5f5;
+            color: #4a4a4a;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #ffb6c1;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d147a3;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6a1b9a;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d147a3;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #d147a3;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #4a4a4a;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            padding: 40px 0;
+            scroll-margin-top: 80px; /* Prevents nav bar from covering headings */
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #6a1b9a;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #ffb6c1;
+            margin: 10px auto 0;
+        }
+
+        /* About Section */
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .ice-cream-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .ice-cream-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ice-cream-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .ice-cream-info {
+            padding: 20px;
+        }
+
+        .ice-cream-name {
+            font-size: 22px;
+            color: #d147a3;
+            margin-bottom: 5px;
+        }
+
+        .ice-cream-quality {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .ice-cream-desc {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            color: #6a1b9a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Clickable Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">🍦 Scoops & Smiles</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Header -->
+    <div class="hero">
+        <h1>Handcrafted Happiness in Every Scoop</h1>
+        <p>Made fresh daily with 100% organic ingredients.</p>
+    </div>
+
+    <div class="container">
+        
+        <!-- About Section -->
+        <section id="about">
+            <h2>Our Story</h2>
+            <p class="about-text">
+                Welcome to Scoops & Smiles! Founded with a passion for creating the creamiest, most delicious frozen treats, we pride ourselves on using only the finest local ingredients. Every batch is churned with love, ensuring a premium taste experience that brings a smile to your face.
+            </p>
+        </section>
+
+        <!-- Menu Section (Ice Cream Name, Photo, Quality, Info) -->
+        <section id="menu">
+            <h2>Our Signature Flavors</h2>
+            <div class="menu-grid">
+                
+                <!-- Ice Cream 1 -->
+                <div class="ice-cream-card">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80" alt="Classic Vanilla" class="ice-cream-img">
+                    <div class="ice-cream-info">
+                        <h3 class="ice-cream-name">Dreamy Vanilla Dream</h3>
+                        <span class="ice-cream-quality">Premium Organic</span>
+                        <p class="ice-cream-desc">Made with genuine Madagascar vanilla beans and rich, farm-fresh local cream for a timeless, smooth finish.</p>
+                    </div>
+                </div>
+
+                <!-- Ice Cream 2 -->
+                <div class="ice-cream-card">
+                    <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=500&q=80" alt="Rich Chocolate" class="ice-cream-img">
+                    <div class="ice-cream-info">
+                        <h3 class="ice-cream-name">Midnight Chocolate Fudge</h3>
+                        <span class="ice-cream-quality">Award Winning</span>
+                        <p class="ice-cream-desc">A deep, dark Belgian chocolate base swirled with chunks of homemade fudge brownies for ultimate chocolate lovers.</p>
+                    </div>
+                </div>
+
+                <!-- Ice Cream 3 -->
+                <div class="ice-cream-card">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=500&q=80" alt="Strawberry Bliss" class="ice-cream-img">
+                    <div class="ice-cream-info">
+                        <h3 class="ice-cream-name">Strawberry Bliss</h3>
+                        <span class="ice-cream-quality">100% Fresh Fruit</span>
+                        <p class="ice-cream-desc">Bursting with sweet, sun-ripened handpicked strawberries blended beautifully into a light, refreshing cream.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section (Address & Contact Number) -->
+        <section id="contact">
+            <h2>Visit or Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📍 Address:</strong>
+                    <p>123 Sweet Treat Lane, Dessert District, NY 10001</p>
+                </div>
+                <div class="contact-item">
+                    <strong>📞 Contact Number:</strong>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <strong>⏰ Opening Hours:</strong>
+                    <p>Mon - Sun: 11:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Scoops & Smiles Ice Cream Shop. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
